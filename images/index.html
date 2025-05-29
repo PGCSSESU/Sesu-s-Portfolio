@@ -145,51 +145,44 @@
   <div class="container">
     <h2 class="section-title">My Project Work</h2>
     <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-image" style="background-image: url('images/partake.png')"></div>
-        <div class="project-info">
+      <div class="project-card" style="background-image: url('images/partake.png')">
+        <div class="overlay">
           <h3>Partake Website Clone</h3>
           <p>HTML & CSS | Layout replication</p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-image" style="background-image: url('images/personel.png')"></div>
-        <div class="project-info">
+      <div class="project-card" style="background-image: url('images/personel.png')">
+        <div class="overlay">
           <h3>Personal Portfolio</h3>
           <p>HTML, CSS & JavaScript | Portfolio site</p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-image" style="background-image: url('images/redtape.png')"></div>
-        <div class="project-info">
+      <div class="project-card" style="background-image: url('images/portfolio3.jpg')">
+        <div class="overlay">
           <h3>Red Tape Clone</h3>
           <p>HTML, CSS, Bootstrap | Responsive UI</p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-image" style="background-image: url('images/bank.png')"></div>
-        <div class="project-info">
+      <div class="project-card" style="background-image: url('images/bank.png')">
+        <div class="overlay">
           <h3>Simulated Bank</h3>
           <p>HTML, CSS, React.js | Virtual banking</p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-image" style="background-image: url('images/amazon.png')"></div>
-        <div class="project-info">
+      <div class="project-card" style="background-image: url('images/amazon.png')">
+        <div class="overlay">
           <h3>Amazon-Inspired E-Commerce</h3>
           <p>HTML, CSS, MERN | Auth & Payments</p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-image" style="background-image: url('images/blog.png')"></div>
-        <div class="project-info">
+      <div class="project-card" style="background-image: url('images/blog.png')">
+        <div class="overlay">
           <h3>Blog Application</h3>
           <p>HTML, CSS, MERN | Blog posts & auth</p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-image" style="background-image: url('images/3d.jpeg')"></div>
-        <div class="project-info">
+      <div class="project-card" style="background-image: url('images/3d.jpeg')">
+        <div class="overlay">
           <h3>Interactive 3D Portfolio</h3>
           <p>HTML, React, Tailwind CSS | Animations</p>
         </div>
@@ -199,9 +192,10 @@
 </section>
 
 <style>
+  /* Orange background for the whole section */
   .projects-section {
     padding: 60px 20px;
-    background-color: #ffffff; /* Orange background */
+    background-color: #ffffff; /* Bright orange */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
@@ -216,54 +210,61 @@
     margin-bottom: 40px;
     letter-spacing: 2px;
     font-weight: 700;
-    color: #000000;
+    color: #ffffff;
   }
 
+  /* Grid with exactly 3 columns */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
 
+  /* Project cards are square and have background images */
   .project-card {
-    background: #fff;
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     border-radius: 15px;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center;
     box-shadow: 0 8px 20px rgba(172, 131, 75, 0.4);
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .project-card:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
     box-shadow: 0 12px 30px rgba(232, 116, 21, 0.6);
   }
 
-  .project-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-size: cover;
-    background-position: center;
+  /* Overlay inside the card */
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 2;
+    transition: background 0.3s ease;
   }
 
-  .project-info {
-    padding: 15px;
-    text-align: center;
-    background: #fff;
-  }
-
-  .project-info h3 {
+  .overlay h3 {
     margin: 0;
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 1.5rem;
     font-weight: 700;
   }
 
-  .project-info p {
+  .overlay p {
     margin-top: 5px;
-    font-size: 0.95rem;
-    color: #777;
+    font-size: 1rem;
+    color: #ccc;
   }
 
+  /* Responsive */
   @media (max-width: 900px) {
     .projects-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -274,7 +275,7 @@
     .projects-grid {
       grid-template-columns: 1fr;
     }
-    .project-image {
+    .project-card {
       aspect-ratio: 4 / 3;
     }
   }
@@ -299,7 +300,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>Hire Me!</h2>
 					<p>I want to become a developer with a passion for creating visually stunning and user-friendly websites.</p>
-					<p><a href="./images/sesuraj_Resume-1.pdf" target="_blank" class="btn btn-default btn-lg">Download CV</a></p>
+					<p><a href="sesu resume.pdf" target="_blank" class="btn btn-default btn-lg">Download CV</a></p>
 				</div>
 			</div>
 		</div>
